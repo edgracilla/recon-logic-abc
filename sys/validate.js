@@ -27,11 +27,4 @@ const validate = (schema) => (req, res, next) => {
   return next();
 };
 
-const catchAsync = (fn) => (req, res, next) => Promise
-  .resolve(fn(req, res, next))
-  .catch((err) => next(err));
-
-module.exports = {
-  catchAsync,
-  validate,
-};
+module.exports = validate;

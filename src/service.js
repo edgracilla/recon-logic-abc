@@ -2,7 +2,7 @@
 
 function getSomething() {
   // const result = axios.get()
-  const result = 'foobar service';
+  const result = 'foobar';
 
   return result;
 }
