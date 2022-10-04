@@ -5,9 +5,9 @@
 const util = require('./utils');
 const svc = require('./service');
 
-const ApiError = require('../sys/api-error');
-const { parent } = require('../sys/binder');
-const { name, version } = require('../package.json');
+const ApiError = require('../../sys/api-error');
+const { parent } = require('../../sys/binder');
+const { name, version } = require('../../package.json');
 
 async function postSomething() {
   return {
