@@ -3,8 +3,8 @@ const Joi = require('joi');
 module.exports = {
   get: {
     query: Joi.object().keys({
-      foo: Joi.string().optional(),
-      bar: Joi.string().optional(),
+      apiErr: Joi.string().optional(),
+      normalErr: Joi.string().optional(),
     }),
   },
   post: {
