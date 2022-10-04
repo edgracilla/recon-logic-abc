@@ -3,9 +3,9 @@
 const util = require('./utils');
 const svc = require('./service');
 
-const { options } = require('../sys/binder');
+const { logger, config } = require('../sys/binder');
 
-const { logger, config } = options;
+// const { logger, config } = options;
 
 async function doSomething() {
   const result = svc.getSomething();

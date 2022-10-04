@@ -13,6 +13,7 @@ app.use('/logic-abc', logic.router);
 
 logic.bind({
   logger: console.log,
+  foo: 'bar',
 });
 
 app.use('*', (req, res) => {
