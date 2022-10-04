@@ -3,15 +3,27 @@
 const util = require('./utils');
 const svc = require('./service');
 
-const { logger, config } = require('../sys/binder');
+const { parent } = require('../sys/binder');
 
-// const { logger, config } = options;
+async function postSomething() {
+  return {
+    message: 'Post done!',
+  };
+}
 
-async function doSomething() {
+async function getSomething(query) {
   const result = svc.getSomething();
   const capitalizedResult = util.capitalizeFirstLetter(result);
 
-  logger.info(config);
+  if (parent.logger) {
+    parent.logger.info(parent.config);
+  } else {
+    console.log(parent);
+  }
+
+  if (query.foo) {
+    throw new Error('This will be handled by parent repo!');
+  }
 
   return {
     message: `Something done in ${capitalizedResult} service!`,
@@ -19,5 +31,6 @@ async function doSomething() {
 }
 
 module.exports = {
-  doSomething,
+  postSomething,
+  getSomething,
 };

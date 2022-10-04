@@ -1,22 +1,12 @@
-// const options = {};
+const parent = {};
 
-// const bind = (parent) => {
-//   options.config = parent.config;
-//   options.logger = parent.logger;
-//   options.sequelize = parent.sequelize;
-// };
+const bind = (opts) => {
+  parent.config = opts.config;
+  parent.logger = opts.logger;
+  parent.sequelize = opts.sequelize;
+};
 
-class Binder {
-  bind(parent) {
-    this.config = parent.config;
-    this.logger = parent.logger;
-    this.sequelize = parent.sequelize;
-  }
-}
-
-module.exports = new Binder();
-
-// module.exports = {
-//   options,
-//   bind,
-// };
+module.exports = {
+  parent,
+  bind,
+};

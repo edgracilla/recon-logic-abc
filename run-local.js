@@ -13,13 +13,13 @@ app.use('/logic-abc', logic.router);
 
 logic.bind({
   logger: console.log,
-  foo: 'bar',
+  config: { foo: 'bar' },
 });
 
 app.use('*', (req, res) => {
   res.status(404).json({
     statusCode: 404,
-    message: 'Nof Found!',
+    message: 'Not Found!',
   });
 });
 

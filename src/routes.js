@@ -11,16 +11,16 @@ const router = express.Router();
 // to controller. With this, we can easily write tests in controller with pure function params
 // and not as a router function with `req, res, next` which is too tedious and messy in tests
 
-router.post('/foo', validate(vld.post), async (req, res) => {
+router.post('/', validate(vld.post), async (req, res) => {
   const { body, params } = req;
-  const ret = await ctl.doSomething(body, params);
+  const ret = await ctl.postSomething(body, params);
 
   res.send(ret);
 });
 
-router.get('/bar', validate(vld.get), async (req, res) => {
+router.get('/', validate(vld.get), async (req, res) => {
   const { query } = req;
-  const ret = await ctl.doSomething(query);
+  const ret = await ctl.getSomething(query);
 
   res.send(ret);
 });
