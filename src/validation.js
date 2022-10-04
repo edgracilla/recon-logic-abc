@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 module.exports = {
-  get: {
+  errHandling: {
     query: Joi.object().keys({
       apiErr: Joi.string().optional(),
       normalErr: Joi.string().optional(),

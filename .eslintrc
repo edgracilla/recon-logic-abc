@@ -12,7 +12,7 @@
     "ecmaVersion": 2022
   },
   "rules": {
-    "no-param-reassign": "off" // !!
+    "no-param-reassign": "off", // !!
     // "security/detect-object-injection": "off", // !!!
   },
   "ignorePatterns": [

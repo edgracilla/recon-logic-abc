@@ -18,9 +18,16 @@ router.post('/', validate(vld.post), async (req, res) => {
   res.send(ret);
 });
 
-router.get('/', validate(vld.get), async (req, res) => {
+router.get('/', async (req, res) => {
   const { query } = req;
-  const ret = await ctl.getSomething(query);
+  const ret = await ctl.rootDemo(query);
+
+  res.send(ret);
+});
+
+router.get('/err', validate(vld.errHandling), async (req, res) => {
+  const { query } = req;
+  const ret = await ctl.errHandling(query);
 
   res.send(ret);
 });
