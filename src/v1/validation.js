@@ -9,8 +9,8 @@ module.exports = {
   },
   post: {
     body: Joi.object().keys({
-      foo: Joi.string().required(),
-      bar: Joi.string().required(),
+      foo: Joi.string().optional(),
+      bar: Joi.string().optional(),
     }),
   },
 };

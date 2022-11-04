@@ -11,7 +11,7 @@ const { name, version } = require('../../package.json');
 
 async function postSomething() {
   return {
-    message: 'Posted!',
+    message: 'Posted v2!',
   };
 }
 
